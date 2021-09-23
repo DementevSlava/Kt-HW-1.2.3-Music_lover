@@ -1,38 +1,37 @@
 package ru.netology
 
 fun main() {
+    // Код написан для копеек
     val totalPrice = 1001_00
     val musicLover = true
     val condition1 = 1..1000
     val condition2 = 1001_00..10000_00
-    val fixedDiscount = 100
-    val onePercent = 1 / 100
-    val fivePercent = 5 / 1000
+    val fixedDiscount = 100_00
 
     val sum = if (musicLover) {
         when (totalPrice) {
             in condition1 -> {
-                totalPrice - totalPrice * onePercent
+                totalPrice - totalPrice * 1 / 100
             }
             in condition2 -> {
                 val tmp = totalPrice - fixedDiscount
-                tmp - tmp * onePercent
+                tmp - tmp * 1 / 100
             }
             else -> {
-                val tmp = totalPrice - totalPrice * fivePercent
-                tmp - tmp * onePercent
+                val tmp = totalPrice - totalPrice * 5 / 100
+                tmp - tmp * 1 / 100
             }
         }
     } else {
         when (totalPrice) {
             in condition1 -> {
-                totalPrice - totalPrice * onePercent
+                totalPrice - totalPrice * 1 / 100
             }
             in condition2 -> {
                 totalPrice - fixedDiscount
             }
             else -> {
-                totalPrice - totalPrice * fivePercent
+                totalPrice - totalPrice * 5 / 100
             }
         }
     }
