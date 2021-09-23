@@ -3,14 +3,17 @@ package ru.netology
 fun main() {
     val totalPrice = 1001_00
     val musicLover = true
+    val condition1 = 1..1000
+    val condition2 = 1001_00..10000_00
+    val fixedDiscount = 100
 
     val sum = if (musicLover) {
         when (totalPrice) {
-            in 1..1000_00 -> {
+            in condition1 -> {
                 totalPrice - totalPrice * 1 / 100
             }
-            in 1001_00..10000_00 -> {
-                val tmp = totalPrice - 100_00
+            in condition2 -> {
+                val tmp = totalPrice - fixedDiscount
                 tmp - tmp * 1 / 100
             }
             else -> {
@@ -20,11 +23,11 @@ fun main() {
         }
     } else {
         when (totalPrice) {
-            in 1..1000_00 -> {
+            in condition1 -> {
                 totalPrice - totalPrice * 1 / 100
             }
-            in 1001_00..10000_00 -> {
-                totalPrice - 100_00
+            in condition2 -> {
+                totalPrice - fixedDiscount
             }
             else -> {
                 totalPrice - totalPrice * 5 / 100
